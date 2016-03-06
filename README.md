@@ -7,3 +7,7 @@ Clone project:
 Start project:
 
     bash /home/box/web/init.sh
+
+Nginx log:
+
+    sudo cat /var/log/nginx/error.log

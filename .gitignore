@@ -1,2 +1,9 @@
+# Project files
 .idea
+
+# Debug files
 debug.py
+
+# Temporary files
+*.pyc
+__pycache__
