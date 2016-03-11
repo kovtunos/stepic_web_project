@@ -1,9 +1,14 @@
 # Project files
 .idea
+env
 
 # Debug files
-debug.py
+*debug*
+
+# Local config
+*_local*
 
 # Temporary files
 *.pyc
 __pycache__
+*.log
