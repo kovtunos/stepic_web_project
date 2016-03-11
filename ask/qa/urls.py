@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.contrib import admin
 from qa.views import test
 
 urlpatterns = patterns('',
@@ -9,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^ask/', test, name='ask'),
     url(r'^popular/', test, name='popular'),
     url(r'^new/', test, name='new'),
+    url(r'^admin/', admin.site.urls),
 )
