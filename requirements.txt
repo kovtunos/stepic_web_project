@@ -3,3 +3,4 @@ mysqlclient
 gunicorn
 flake8
 autopep8
+django_autofixture

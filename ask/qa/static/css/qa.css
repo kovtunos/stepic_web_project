@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: helvetica, sans-serif;
+}
+a {
+  color: #00abff;
+  text-decoration: none;
+}
+h1 {
+  font-weight: normal;
+  border-bottom: 1px solid #bbb;
+  padding: 0 0 10px 0;
+}
+h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 30px 0 0;
+}
+#content {
+  float: left;
+  padding: 0 0 0 30px;
+  width: 60%;
+}
+#sidebar {
+  background: #EAF2FD;
+  float: right;
+  height: 100%;
+  padding: 10px;
+  width: 30%;
+}
+.pagination {
+  margin: 40px 0;
+  font-weight: bold;
+  text-align: center;
+}
+.pagination .active a {
+  color: white;
+  text-align: center;
+}
+ul.pagination li {
+  display: inline;
+  list-style: none;
+  margin: 0 15px;
+}
+.pagination .active {
+  border-radius: 50%;
+  background: #00abff;
+  padding: 10px 10px 10px 14px;
+  text-align: center;
+}
+.submitted {
+  color: #ccc;
+  font-family: georgia, serif;
+  font-size: 12px;
+  font-style: italic;
+}

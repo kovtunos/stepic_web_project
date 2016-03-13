@@ -1,0 +1,11 @@
+{% extends "qa/base.html" %}
+
+{% block title %}{{ question.title }}{% endblock %}
+
+{% block content %}
+  <h1>{{ question.title }}</h1>
+  <p class="submitted">
+    Published {{ question.added_at }} by {{ question.author }}
+  </p>
+  {{ question.text|linebreaks }}
+{% endblock %}
