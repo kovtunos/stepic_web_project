@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'autofixture',
+    # 'autofixture',
     'qa',
 )
 
@@ -59,20 +59,27 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'qa',
-        'USER': 'qa_user',
-        'PASSWORD': '123456789',
-
-        # LOCAL
-        'HOST': '/home/kovtunos/.virtenv/_mysql/mysql.sock',
-        'PORT': '2273',
-
-        # SERVER
-        # 'HOST': '',
-        # 'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'qa',
+#         'USER': 'qa_user',
+#         'PASSWORD': '123456789',
+#
+#         # LOCAL
+#         'HOST': '/home/kovtunos/.virtenv/_mysql/mysql.sock',
+#         'PORT': '2273',
+#
+#         # SERVER
+#         # 'HOST': '',
+#         # 'PORT': '3306',
+#     }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
