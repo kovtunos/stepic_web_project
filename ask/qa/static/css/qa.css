@@ -2,13 +2,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: helvetica, sans-serif;
+  position: relative;
 }
 a {
   color: #00abff;
   text-decoration: none;
 }
+a:hover {
+  color: #0B8BD2;
+}
 h1 {
   font-weight: normal;
+  font-size: 2.2em;
   border-bottom: 1px solid #bbb;
   padding: 0 0 10px 0;
 }
@@ -17,12 +22,55 @@ h2 {
   font-weight: normal;
   margin: 30px 0 0;
 }
-#content {
+header {
+  background-color: #00abff;
+  color: #FFF;
+  height: 100px;
+  overflow: hidden;
+}
+.logo {
+margin: 15px 0 0 30px;
+border: none;
+margin-left: 30px;
+}
+.slogan {
+  margin: 0 0 0 30px;
+  font-size: 1em;
+}
+.copy {
+  padding-right: 30px;
+  float: right;
+  font-size:.8em;
+}
+.adm {
+  float: left;
+  font-size:.8em;
+  padding-left: 30px;
+}
+footer {
+  background-color: #00abff;
+  color: #FFF;
+  height: 36px;
+  position: absolute;
+  width: 100%;
+}
+footer a,
+header a {
+  color: #FFF;
+}
+footer a:hover,
+header a:hover {
+  color: #FFF;
+}
+.wrapper {
+  clear: both;
+}
+.content {
   float: left;
   padding: 0 0 0 30px;
   width: 60%;
 }
-#sidebar {
+.sidebar {
   background: #EAF2FD;
   float: right;
   height: 100%;
@@ -54,4 +102,7 @@ ul.pagination li {
   font-family: georgia, serif;
   font-size: 12px;
   font-style: italic;
+}
+.clear {
+  clear: both;
 }

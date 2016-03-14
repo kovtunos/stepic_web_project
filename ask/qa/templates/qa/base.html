@@ -2,17 +2,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{% block title %}{% endblock %}</title>
+  <title>{% block title %}Ask Pupkin{% endblock %}</title>
   <link href="{% static "css/qa.css" %}" rel="stylesheet">
 </head>
 <body>
-  <div id="content">
-    {% block content %}
-    {% endblock %}
+  <header>
+    <h1 class="logo"><a href="/">Ask Pupkin</a></h1>
+    <h2 class="slogan">Have a question? Ask me.</h2>
+  </header>
+  <div class="wrapper">
+    <div class="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div class="sidebar">
+      <h2>Navigation</h2>
+      <p><a href="/">Home</a></p>
+      <p><a href="/popular/">Popular Questions</a></p>
+    </div>
   </div>
-  <div id="sidebar">
-    <h2>Sidebar</h2>
-    <p>Sidebar will be here.</p>
-  </div>
+  <div class="clear"></div>
+  <footer>
+    <p class="adm"><a href="/admin/">Admin</a></p>
+    <p class="copy">
+      Copyleft 2016. Powered by Django
+    </p>
+  </footer>
 </body>
 </html>
