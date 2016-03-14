@@ -12,3 +12,6 @@ env
 *.pyc
 __pycache__
 *.log
+
+# Test data
+*fixtures*

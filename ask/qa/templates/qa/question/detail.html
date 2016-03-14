@@ -8,4 +8,20 @@
     Published {{ question.added_at }} by {{ question.author }}
   </p>
   {{ question.text|linebreaks }}
+
+  {% block answers %}
+    <h2>Answers:</h2>
+    {% for answer in answers %}
+      <div class="answer">
+        <p class="info">
+          Answer by {{ answer.author }} [{{ answer.added_at }}]
+        </p>
+        {{ answer.text|linebreaks }}
+      </div>
+      {% empty %}
+      <p>There are no answers yet.</p>
+    {% endfor %}
+
+  {% endblock %}
+
 {% endblock %}

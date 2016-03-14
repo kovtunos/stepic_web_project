@@ -44,6 +44,8 @@ def popular(request):
 
 def question_detail(request, pk):
     question = get_object_or_404(Question, id=pk)
+    answers = question.answers.all()
     return render(request, 'qa/question/detail.html', {
         'question': question,
+        'answers': answers,
     })

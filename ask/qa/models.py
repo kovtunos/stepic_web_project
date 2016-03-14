@@ -8,13 +8,13 @@ class Question(models.Model):
     text = models.TextField()
     added_at = models.DateTimeField(auto_now_add=True)
     rating = models.IntegerField(255)
-    author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    author = models.ForeignKey(User)
     likes = models.TextField()
 
     class Meta:
         ordering = ('-added_at',)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
     def get_absolute_url(self):
@@ -24,5 +24,14 @@ class Question(models.Model):
 class Answer(models.Model):
     text = models.TextField()
     added_at = models.DateTimeField(auto_now_add=True)
-    question = models.ForeignKey(Question, on_delete=models.DO_NOTHING)
-    author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    question = models.ForeignKey(Question, related_name='answers')
+    author = models.ForeignKey(User)
+
+    class Meta:
+        ordering = ('added_at',)
+
+    def __unicode__(self):
+        return 'Answer by {}'.format(self.author)
+
+
+# TODO: when upgrading don't forget to rename __unicode__ to __str__
