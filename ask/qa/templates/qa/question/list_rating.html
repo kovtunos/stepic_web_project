@@ -1,0 +1,5 @@
+{% extends "qa/question/list.html" %}
+
+{% block question_title %}
+  <h2><a href="{{ question.get_absolute_url }}">{{ question.title }} ({{ question.rating }})</a></h2>
+{% endblock %}

@@ -5,7 +5,9 @@
 {% block content %}
   <h1>New Questions</h1>
   {% for question in questions %}
-    <h2><a href="{{ question.get_absolute_url }}">{{ question.title }}</a></h2>
+    {% block question_title %}
+      <h2><a href="{{ question.get_absolute_url }}">{{ question.title }}</a></h2>
+    {% endblock %}
   {% endfor %}
 
   {% include "pagination.html" %}
