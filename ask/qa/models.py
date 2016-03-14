@@ -7,9 +7,9 @@ class Question(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
     added_at = models.DateTimeField(auto_now_add=True)
-    rating = models.IntegerField(255)
+    rating = models.IntegerField(blank=True)
     author = models.ForeignKey(User)
-    likes = models.TextField()
+    likes = models.TextField(blank=True)
 
     class Meta:
         ordering = ('-added_at',)
