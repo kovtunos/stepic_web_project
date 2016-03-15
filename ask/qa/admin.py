@@ -1,9 +1,10 @@
 from django.contrib import admin
 from .models import Question, Answer
+import pytz
 
 
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('title', 'text', 'added_at', 'rating', 'author', 'likes')
+    list_display = ('title', 'text', 'added_at', 'author', 'rating')
     date_hierarchy = 'added_at'
 
 
