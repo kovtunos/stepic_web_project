@@ -9,7 +9,8 @@ class Question(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
     rating = models.IntegerField(default=0)
     author = models.ForeignKey(User, related_name="question_author")
-    likes = models.ManyToManyField(User, related_name="question_like", blank=True)
+    likes = models.ManyToManyField(
+        User, related_name="question_like", blank=True)
 
     class Meta:
         ordering = ('-added_at',)
