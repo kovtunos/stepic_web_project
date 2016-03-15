@@ -6,12 +6,4 @@ Clone project:
 
 Start project:
 
-    bash /home/box/web/init.sh mysql
-
-or
-
-    bash /home/box/web/init.sh sqlite
-
-Nginx log:
-
-    sudo cat /var/log/nginx/error.log
+    bash /home/box/web/init.sh

@@ -1,6 +1,6 @@
 django==1.6.1
 mysqlclient
-gunicorn
+gunicorn==17.5
 flake8
 autopep8
 django_autofixture

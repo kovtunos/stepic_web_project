@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'autofixture',
     'qa',
 )
 
@@ -66,11 +67,9 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'qa',
-#         'USER': 'qa_user',
+#         'NAME': 'ask',
+#         'USER': 'ask_user',
 #         'PASSWORD': '123456789',
-#
-#         # SERVER
 #         'HOST': '',
 #         'PORT': '3306',
 #     }
@@ -94,3 +93,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Load local settings
+try:
+    from ask.settings_local import *
+except ImportError:
+    pass

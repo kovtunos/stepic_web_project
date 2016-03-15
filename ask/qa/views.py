@@ -14,6 +14,7 @@ def question_list(request):
     questions = Question.objects.all()
     questions = Question.objects.order_by('-added_at')
 
+    # TODO: Pager must be in one function
     # pagination
     try:
         limit = int(request.GET.get('limit', 10))
