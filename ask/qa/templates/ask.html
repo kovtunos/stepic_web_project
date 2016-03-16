@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Ask Question // Ask Pupkin{% endblock %}
+
+{% block content %}
+  <h1>Ask Question</h1>
+  {% for e in form.non_field_errors %}
+    <div class="alert">{{ e }}</div>
+  {% endfor %}
+  <div class="form">
+    <form method="post" action="/ask/">
+      {% csrf_token %}
+        {% for field in form %}
+          <div class="form-label">
+            {{ field.label }}
+          </div>
+          <div class="form-field">
+            {{ field }}
+          </div>
+        {% endfor %}
+      <button type="submit" class="btn">Add answer</button>
+    </form>
+  </div>
+{% endblock %}

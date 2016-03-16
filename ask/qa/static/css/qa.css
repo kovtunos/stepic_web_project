@@ -114,3 +114,17 @@ ul.pagination li {
 .info {
   color: #0B8BD2;
 }
+
+/* Forms */
+.form label {
+  display: block;
+}
+.form input {
+  padding: 5px;
+}
+.form-field {
+  margin-bottom: 10px;
+}
+.alert {
+  color: red;
+}

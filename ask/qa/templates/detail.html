@@ -1,4 +1,4 @@
-{% extends "qa/base.html" %}
+{% extends "base.html" %}
 
 {% block title %}{{ question.title }}{% endblock %}
 
@@ -21,7 +21,24 @@
       {% empty %}
       <p>There are no answers yet.</p>
     {% endfor %}
-
   {% endblock %}
+
+  {% block question_ask %}
+    <h1>Your answer:</h1>
+    {% for e in form.non_field_errors %}
+      <div class="alert">{{ e }}</div>
+    {% endfor %}
+    <div class="form">
+      <form method="post" action="/answer/">
+        {% csrf_token %}
+          {% for field in form %}
+             <div class="form-field">
+               {{ field }}
+             </div>
+          {% endfor %}
+        <button type="submit" class="btn">Add answer</button>
+      </form>
+    </div>
+  {%endblock%}
 
 {% endblock %}
