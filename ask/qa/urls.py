@@ -2,6 +2,7 @@ from django.conf.urls import patterns, url
 from django.contrib import admin
 from qa.views import test, question_list, question_detail, popular
 from qa.views import question_ask, question_answer
+from qa.views import user_signup, user_login
 
 
 urlpatterns = patterns('',
@@ -10,8 +11,8 @@ urlpatterns = patterns('',
     url(r'^popular/', popular, name='popular'),
     url(r'^ask/', question_ask, name='question_ask'),
     url(r'^answer/', question_answer, name='question_answer'),
-    url(r'^login/', test, name='login'),
-    url(r'^signup/', test, name='signup'),
+    url(r'^signup/', user_signup, name='signup'),
+    url(r'^login/', user_login, name='login'),
     url(r'^new/', test, name='new'),
     url(r'^admin/', admin.site.urls),
 )
