@@ -1,10 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage
+from django.core.urlresolvers import reverse
 from qa.models import Question
 from qa.forms import AskForm, AnswerForm
-from django.http import Http404
-from django.core.urlresolvers import reverse
 
 
 def test(request, *args, **kwargs):

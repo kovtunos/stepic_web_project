@@ -69,6 +69,7 @@ header a:hover {
   float: left;
   padding: 0 0 0 30px;
   width: 60%;
+  margin-bottom: 40px;
 }
 .sidebar {
   background: #EAF2FD;
@@ -127,4 +128,9 @@ ul.pagination li {
 }
 .alert {
   color: red;
+}
+.alert input,
+.alert textarea {
+  background-color: #FFE8E8;
+  border: 1px solid red;
 }

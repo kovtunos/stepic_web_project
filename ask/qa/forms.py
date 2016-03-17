@@ -10,13 +10,15 @@ class AskForm(forms.Form):
     def clean_title(self):
         title = self.cleaned_data['title']
         if title.strip() == '':
-            raise forms.ValidationError(u'Title is empty', code='invalid')
+            raise forms.ValidationError(
+                u'Title is empty', code='validation_error')
         return title
 
     def clean_text(self):
         text = self.cleaned_data['text']
         if text.strip() == '':
-            raise forms.ValidationError(u'Text is empty', code='invalid')
+            raise forms.ValidationError(
+                u'Text is empty', code='validation_error')
         return text
 
     def save(self):
@@ -33,14 +35,15 @@ class AnswerForm(forms.Form):
     def clean_text(self):
         text = self.cleaned_data['text']
         if text.strip() == '':
-            raise forms.ValidationError(u'Text is empty', code='invalid')
+            raise forms.ValidationError(
+                u'Text is empty', code='validation_error')
         return text
 
     def clean_question(self):
         question = self.cleaned_data['question']
         if question == 0:
             raise forms.ValidationError(u'Question number incorrect',
-                                        code='invalid')
+                                        code='validation_error')
         return question
 
     def save(self):
