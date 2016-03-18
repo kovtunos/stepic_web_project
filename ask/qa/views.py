@@ -14,30 +14,34 @@ def test(request, *args, **kwargs):
     return HttpResponse('OK')
 
 
-def question_list(request):
-    # TODO: use class-based views
-    questions = Question.objects.all()
-    questions = Question.objects.order_by('-added_at')
-
-    # TODO: Pager must be in one function
-    # pagination
+def paginate(request, qs):
     try:
         limit = int(request.GET.get('limit', 10))
     except ValueError:
         limit = 10
     if limit > 100:
         limit = 10
+
     try:
         page = int(request.GET.get('page', 1))
     except ValueError:
         raise Http404
-    paginator = Paginator(questions, limit)
-    # TODO: remove hardcode
-    paginator.baseurl = '/?page='
+
+    paginator = Paginator(qs, limit)
+
     try:
         page = paginator.page(page)
     except EmptyPage:
         page = paginator.page(paginator.num_pages)
+    return page, paginator
+
+
+def question_list(request):
+    # TODO: use class-based views
+    qs = Question.objects.all()
+    qs = qs.order_by('-added_at')
+    page, paginator = paginate(request, qs)
+    paginator.baseurl = reverse('question_list') + '?page='
 
     return render(request, 'list.html', {
         'questions': page.object_list,
@@ -48,27 +52,10 @@ def question_list(request):
 
 def popular(request):
     # TODO: use class-based views
-    questions = Question.objects.all()
-    questions = Question.objects.order_by('-rating')
-
-    # pagination
-    try:
-        limit = int(request.GET.get('limit', 10))
-    except ValueError:
-        limit = 10
-    if limit > 100:
-        limit = 10
-    try:
-        page = int(request.GET.get('page', 1))
-    except ValueError:
-        raise Http404
-    paginator = Paginator(questions, limit)
-    # TODO: remove hardcode
-    paginator.baseurl = '/popular/?page='
-    try:
-        page = paginator.page(page)
-    except EmptyPage:
-        page = paginator.page(paginator.num_pages)
+    qs = Question.objects.all()
+    qs = qs.order_by('-rating')
+    page, paginator = paginate(request, qs)
+    paginator.baseurl = reverse('popular') + '?page='
 
     return render(request, 'list_rating.html', {
         'questions': page.object_list,
