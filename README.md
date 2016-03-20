@@ -2,8 +2,10 @@
 
 Clone project:
 
-    git clone https://github.com/kovtunos/stepic_web_project.git /home/box/web
+    git clone https://github.com/kovtunos/stepic_web_project.git web
 
-Start project:
+Local init:
 
-    bash /home/box/web/init.sh
+    virtualenv env -p `which python3`
+    source env/bin/activate
+    pip install -r requirements.txt

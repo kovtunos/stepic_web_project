@@ -1,17 +1,12 @@
-# Project files
-.idea
-env
-
-# Debug files
-*debug*
-
-# Local config
+# Local
 *_local*
 static
+env
 
 # Temporary files
 *.pyc
 __pycache__
+*.swp
 *.log
 log
 

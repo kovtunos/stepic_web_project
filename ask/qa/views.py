@@ -6,9 +6,6 @@ from django.contrib.auth import login, logout
 from qa.models import Question
 from qa.forms import AskForm, AnswerForm, LoginForm, SignupForm
 
-import logging
-logger = logging.getLogger(__name__)
-
 
 def test(request, *args, **kwargs):
     return HttpResponse('OK')
@@ -37,7 +34,6 @@ def paginate(request, qs):
 
 
 def question_list(request):
-    # TODO: use class-based views
     qs = Question.objects.all()
     qs = qs.order_by('-added_at')
     page, paginator = paginate(request, qs)
@@ -51,7 +47,6 @@ def question_list(request):
 
 
 def popular(request):
-    # TODO: use class-based views
     qs = Question.objects.all()
     qs = qs.order_by('-rating')
     page, paginator = paginate(request, qs)

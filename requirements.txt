@@ -1,7 +1,8 @@
-django==1.6.1
+django
 mysqlclient
-gunicorn==17.5
+gunicorn
 flake8
 autopep8
 django_autofixture
 pytz
+django-debug-toolbar

@@ -10,12 +10,12 @@ class Question(models.Model):
     rating = models.IntegerField(default=0)
     author = models.ForeignKey(User, related_name="question_author")
     likes = models.ManyToManyField(
-        User, related_name="question_like", null=True, blank=True)
+        User, related_name="question_like", blank=True)
 
     class Meta:
         ordering = ('-added_at',)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def get_absolute_url(self):
@@ -31,8 +31,5 @@ class Answer(models.Model):
     class Meta:
         ordering = ('added_at',)
 
-    def __unicode__(self):
+    def __str__(self):
         return 'Answer by {}'.format(self.author)
-
-
-# TODO: when upgrading don't forget to rename __unicode__ to __str__
